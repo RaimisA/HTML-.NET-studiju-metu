@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+            <div class="form-box">
+                <h1>Payment Form</h1>
+                <p>Required fields are followed by <abbr title="Required">*</abbr>.</p>
+
+                <h2>Contact information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <abbr title="Required">*</abbr>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <abbr title="Required">*</abbr>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <abbr title="Required">*</abbr>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <h2>Payment information</h2>
+                    <div class="form-group">
+                        <label for="card-type">Card Type:</label>
+                        <abbr title="Required">*</abbr>
+                        <select id="card-type" name="card-type" required>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">MasterCard</option>
+                            <option value="american-express">American Express</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number:</label>
+                        <abbr title="Required">*</abbr>
+                        <input type="text" id="card-number" name="card-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration-date">Expiration Date:</label>
+                        <abbr title="Required">*</abbr>
+                        <input type="text" id="expiration-date" name="expiration-date" placeholder="dd/mm/yyyy, --:--" required>
+                    </div>
+                        <label for="terms">Agree with terms and conditions</label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                    <div class="form-group">
+                        <button type="submit">Validate the payment</button>
+                    </div>
+                </form>
+            </div>
+    </body>
+</html>

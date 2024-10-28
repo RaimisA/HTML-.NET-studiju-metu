@@ -1,0 +1,120 @@
+
+/* p {
+    font-size: 20px;
+}
+#title-1 {
+    font-weight: bold;
+}
+.title-center {
+    text-align: center;
+}
+.parent .child {
+    color: green;
+}
+.parent.child {
+    color: brown;
+} */
+/* .title-center, #title-1, .child {
+    font-size: 15px;
+} */
+
+/* .card{
+    background-color: #2c2c2c;
+    border: 5px solid #000;
+    border-radius: 25px;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 15px;
+    width: 200px;
+}
+
+.card p {
+    font-size: 40px;
+    font-weight: 1000;
+    line-height: 0.1;
+    padding:0;
+}
+
+.number-top{
+    text-align: right;
+}
+
+.item{
+    height: 250px;
+    background-color: #747373;
+} */
+
+.flag{
+    width: 300px;
+    height: 200px;
+}
+.lt-color-top{
+    background-color: #FFB81C;
+}
+.lt-color-mid{
+    background-color: #046A38;
+}
+.lt-color-bottom{
+    background-color: #BE3A34;
+}
+
+.ger-color-top{
+    background-color: #000;
+}
+.ger-color-mid{
+    background-color: #DD0000;
+}
+.ger-color-bottom{
+    background-color: #FFCC00;
+}
+
+.lv-color-top{
+    background-color: #A4343A;
+}
+.lv-color-mid{
+    background-color: #FFFFFF;
+
+}
+.flag div{
+    height: 33.33%;
+}
+
+/* body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    padding: 25px;
+}
+header nav{
+    width: 60%;
+    display: inline-block;
+}
+header nav a{
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+header nav a:hover{
+    padding-bottom: 7px;
+    padding-top: 7px;
+    transform: translateY(15px);
+    background-color: rgb(196,196,196);
+}
+header h1 {
+    width: 39%;
+    display: inline-block;
+}
+
+footer{
+    padding: 25px;
+    background-color:  #747373;
+} */

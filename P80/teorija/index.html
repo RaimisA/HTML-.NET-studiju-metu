@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+
+        <!-- 1. Vidinis JavaScript-->
+         <script>
+            console.log('Hello, World! From internal JavaScript');
+         </script>
+
+         <!--2. Inline JavaScript-->
+            <button onclick="console.log('Hello, World! From inline JavaScript')">Click me</button>
+            
+        <!--3. External JavaScript-->
+        <button onclick="sum(2,3)">Kvieciame sum() funkcija</button>
+
+        <div style="margin-top: 20px;">
+            <button onclick="calculations()">Kvieciame calculations() funkcija
+            </button>
+        </div>
+        <div style="margin-top: 20px;"></div>
+            <button onclick="calculations1(4,5,6,7)">Kvieciame calculations1() funkcija
+            </button>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

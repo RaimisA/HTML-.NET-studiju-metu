@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="HTML forms">
+        <meta name="author" content="Raimondas">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Formos</h1>
+        <form action="/action_page.php" method="get" autocomplete="on">
+            <label for="fname">Vardas</label><br>
+            <input type="text" id="fname" name="fname" required value=""><br>
+            <label for="lname">Pavardė</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+            <h2>SELECT elementai</h2>
+            <label for="cars">Pasirinkite automobilį:</label>
+            <select id="cars" name="drd_cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <label for="cars1">Pasirinkite automobilį:</label><br>
+            <select id="cars1" name="lst_cars" size="4">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <label for="cars2">Pasirinkite automobilį:</label><br>
+            <select id="cars2" name="mlt_lst_cars" size="4" multiple>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <h2>The &lt;textarea&gt; Element</h2>
+            <label for="message">Žinutė</label><br>
+            <textarea id="message" name="comment" rows="4" cols="50" placeholder="Įveskite tekstą čia"></textarea>
+
+            <h2>The &lt;button&gt; Element</h2>
+            <button type="button" onclick="alert('Hello world!')">Spauskite čia</button>
+
+            <h2>The &lt;datalist&gt; Element</h2>
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <h2>Range element</h2>
+            <input type="range" name="points" min="0" max="10">
+            <h2>Number element</h2>
+            <input type="number" name="quantity" min="1" max="5">
+
+            <div>
+                <br>
+                <input type="submit" value="Pateikti">
+
+                <input type="reset" value="Išvalyti">
+            </div>  
+        </form>
+    </body>
+</html>

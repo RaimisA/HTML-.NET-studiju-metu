@@ -1,0 +1,9 @@
+.box {
+    background-color: rgb(150, 213, 245);
+    padding: 15px;
+}
+
+.on {
+    background-color: rgb(43, 255, 0);
+    padding: 15px;
+}

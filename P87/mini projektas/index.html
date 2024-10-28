@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Darbuotojų Duomenys</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table id="darbuotojai">
+            <thead>
+                <tr>
+                    <th>Vardas</th>
+                    <th>Pavardė</th>
+                    <th>Amžius</th>
+                    <th>Pareigos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jonas</td>
+                    <td>Jonaitis</td>
+                    <td>30</td>
+                    <td>Programuotojas</td>
+                </tr>
+                <tr>
+                    <td>Asta</td>
+                    <td>Astaitė</td>
+                    <td>25</td>
+                    <td>Projektų vadovė</td>
+                </tr>
+                <tr>
+                    <td>Petras</td>
+                    <td>Petraitis</td>
+                    <td>35</td>
+                    <td>Analitikas</td>
+                </tr>
+                <tr>
+                    <td>Inga</td>
+                    <td>Ingaitytė</td>
+                    <td>28</td>
+                    <td>Testuotoja</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <label for="delimiterSelect">Select CSV Delimiter:</label>
+        <select id="delimiterSelect">
+            <option value=",">Comma (,)</option>
+            <option value=";">Semicolon (;)</option>
+        </select>
+        
+        <button id="generateCsvButton">Generate CSV</button>
+        <button id="downloadCsvButton" style="display: none;">Download CSV</button>
+        
+        <script src="mini_project.js"></script>
+    </body>
+</html>

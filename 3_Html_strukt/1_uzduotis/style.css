@@ -1,0 +1,47 @@
+
+header{
+    border: solid 5px blue;
+    margin-bottom: 1px;
+}
+header h1{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+nav{
+    border: solid 5px blue;
+    margin-bottom: 1px;
+}
+nav ul{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+main div h2{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+main{
+    border: solid 5px blue;
+    margin-bottom: 1px;
+}
+
+aside{
+    border: solid 5px blue;
+    margin-bottom: 1px;
+}
+
+aside h2{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+footer{
+    border: solid 5px blue;
+    margin-bottom: 1px;
+}
+footer p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

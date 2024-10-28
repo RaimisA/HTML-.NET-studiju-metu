@@ -1,0 +1,72 @@
+.box{
+    border: 5px solid grey;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+
+.box-parent{
+    margin: 30px;
+    border:2px solid black;
+    width: 150px;
+    padding: 10px;
+}
+
+.par-border{
+    border: 2px solid red;
+    margin: 10px;
+    padding: 50px;
+}
+
+.first-picture{
+    background-image: url(grass.jpg);
+    border-style: solid;
+    height: 100x;
+    width: 200px;
+    padding: 50px;
+    background-size:contain;
+    background-position: 50% 50%;
+}
+.box-picture-1{
+    background-image: url(prague.JPEG);
+    border-style: solid;
+    border-radius: 10px;
+    height: 250px;
+    width: 600px;
+    background-size:cover;
+    background-position: 50% 50%;
+    margin-top: 50px;
+}
+
+.box-picture-1 h1{
+    color: red;
+    padding-left: 40px;
+}
+.box-picture-1 p{
+    padding-left: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.box-picture-2{
+    background-image: url(madeira.jpeg);
+    border-style:groove;
+    border-radius: 10px;
+    height: 150px;
+    width: 600px;
+    background-size:120%;
+    background-position: 50% 50%;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.box-picture-2 h1{
+    color: white;
+    padding-left: 20px;
+}
+
+.box-picture-2 p{
+    padding-left: 40px;
+    color: rgb(255, 255, 255);
+}

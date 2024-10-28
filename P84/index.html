@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Hello HTML DOM</h1>
+        <h2>getElementsByTagName()</h2>
+        <ul>
+            <li class="drink coffee">Coffee</li>
+            <li class="drink tea">Tea
+                <ul id="tea_types">
+                    <li>Black</li>
+                    <li>White</li>
+                </ul>
+            </li>
+            <li class="drink water">Water</li>
+            <li class="drink milk">Milk</li>
+        </ul>
+        <div>
+            <button onclick="changeLi()">Change first li</button>
+        </div>
+        <h2>getElementsByClassName(), innerHTML</h2>
+        <button onclick="changeCoffee()">Change Coffee to hot chocolate</button>
+        <button onclick="changeMilk()">Change Milk to Almond drink</button>
+        <button onclick="changeWaterBgColor()">Change water background color</button>
+        <h2>querySelector()(#id)</h2>
+        <button onclick="changeStyleOfTea()">Change Tea type</button>
+
+        <h3>Complex selectors</h3>
+        <div>UserName<input type="text" name="username"></div>
+        <div>password<input type="password" name="password"></div>
+        <button onclick="readInputs()">Read Username and password</button>
+
+        <p id="p_first">Pirmas paragrafas</p>
+        <p class="p_second">Antras paragrafas</p>
+        <p>Trecias paragrafas</p>
+
+        <button onclick="changePFirst()">Change first p</button>
+        <button onclick="changePSecond()">Change second p</button>
+        <button onclick="changePThird()">Change third p</button>
+
+        <script src="script.js" async defer></script>
+    </body>
+</html>
