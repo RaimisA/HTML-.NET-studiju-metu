@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To Do App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <div class="todo-container">
+            <div class="header">
+                <h1>To Do App</h1>
+                <button id="logout-button">Logout</button>
+            </div>
+            <div id="user-info"></div>
+            <div id="error-message"></div>
+            <button id="add-task-button">Add Task</button>
+            <form id="todo-form" style="display: none;">
+                <input type="text" id="todo-type" placeholder="Type">
+                <input type="text" id="todo-content" placeholder="Content">
+                <input type="datetime-local" id="todo-endDate" placeholder="End Date">
+                <button type="submit">Submit</button>
+            </form>
+            <form id="edit-form" style="display: none;">
+                <input type="text" id="edit-type" placeholder="Type">
+                <input type="text" id="edit-content" placeholder="Content">
+                <input type="datetime-local" id="edit-endDate" placeholder="End Date">
+                <button type="submit">Update</button>
+            </form>
+            <ul id="todo-list"></ul>
+        </div>
+        <script src="todo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Register</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="register.css">
+    </head>
+    <body>
+        <div class="todo-container">
+            <h1>Register</h1>
+            <form id="register-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">Register</button>
+            </form>
+            <div id="success-message">Registration successful! Redirecting to login...</div>
+            <div id="error-message">Registration failed. Please try again.</div>
+        </div>
+        <script src="register.js"></script>
+    </body>
+</html>
