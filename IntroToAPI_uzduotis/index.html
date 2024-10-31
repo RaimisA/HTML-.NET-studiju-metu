@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smartphones App</title>
+    <meta name="description" content="A simple app to manage smartphones">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smartphones App</h1>
+        <button id="fetch-smartphones">Fetch Smartphones</button>
+        
+        <h2>Add Smartphone</h2>
+        <form id="add-smartphone-form">
+            <input type="text" id="add-model" placeholder="Model" required>
+            <input type="text" id="add-brand" placeholder="Brand" required>
+            <input type="number" id="add-release-year" placeholder="Release Year" required>
+            <button type="submit">Add Smartphone</button>
+        </form>
+        
+        <h2>Update Smartphone</h2>
+        <form id="update-smartphone-form">
+            <input type="number" id="update-id" placeholder="ID" required>
+            <input type="text" id="update-model" placeholder="Model" required>
+            <input type="text" id="update-brand" placeholder="Brand" required>
+            <input type="number" id="update-release-year" placeholder="Release Year" required>
+            <button type="submit">Update Smartphone</button>
+        </form>
+        
+        <div id="smartphones-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
