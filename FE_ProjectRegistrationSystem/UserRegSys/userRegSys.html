@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Registration System</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="userRegSys.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img id="profile-picture" src="" alt="Profile Picture" style="max-width: 50px; height: auto;">
+            <h1>User Registration System</h1>
+            <div>
+                <span id="user-info">Logged in as: User1</span>
+                <button id="logout-button">Logout</button>
+            </div>
+        </div>
+        <div id="error-message"></div>
+        
+        <h2 id="add-person-info-header">Add Person Information</h2>
+        <form id="add-person-info-form">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="personal-code">Personal Code:</label>
+                <input type="text" id="personal-code" placeholder="Personal Code" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="City" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Street:</label>
+                <input type="text" id="street" placeholder="Street" required>
+            </div>
+            <div class="form-group">
+                <label for="house-number">House Number:</label>
+                <input type="text" id="house-number" placeholder="House Number" required>
+            </div>
+            <div class="form-group">
+                <label for="apartment-number">Apartment Number:</label>
+                <input type="text" id="apartment-number" placeholder="Apartment Number">
+            </div>
+            <div class="form-group">
+                <label for="profile-picture">Profile Picture:</label>
+                <input type="file" id="profile-picture-input">
+            </div>
+            <button type="submit">Add Person Info</button>
+        </form>
+        
+        <h2 id="update-person-info-header">Update Person Information</h2>
+        <form id="update-person-info-form">
+            <div class="form-group">
+                <label for="update-first-name">First Name:</label>
+                <input type="text" id="update-first-name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="update-last-name">Last Name:</label>
+                <input type="text" id="update-last-name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="update-personal-code">Personal Code:</label>
+                <input type="text" id="update-personal-code" placeholder="Personal Code">
+            </div>
+            <div class="form-group">
+                <label for="update-phone-number">Phone Number:</label>
+                <input type="text" id="update-phone-number" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="update-email">Email:</label>
+                <input type="email" id="update-email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="update-city">City:</label>
+                <input type="text" id="update-city" placeholder="City">
+            </div>
+            <div class="form-group">
+                <label for="update-street">Street:</label>
+                <input type="text" id="update-street" placeholder="Street">
+            </div>
+            <div class="form-group">
+                <label for="update-house-number">House Number:</label>
+                <input type="text" id="update-house-number" placeholder="House Number">
+            </div>
+            <div class="form-group">
+                <label for="update-apartment-number">Apartment Number:</label>
+                <input type="text" id="update-apartment-number" placeholder="Apartment Number">
+            </div>
+            <div class="form-group">
+                <label for="update-profile-picture">Profile Picture:</label>
+                <input type="file" id="update-profile-picture-input">
+            </div>
+            <button type="submit">Update Person Info</button>
+        </form>
+    </div>
+    <script src="userRegSys.js"></script>
+</body>
+</html>

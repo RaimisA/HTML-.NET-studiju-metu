@@ -1,0 +1,11 @@
+@import url('../style.css');
+
+#success-message {
+    display: none;
+    color: green;
+}
+
+#error-message {
+    display: none;
+    color: red;
+}

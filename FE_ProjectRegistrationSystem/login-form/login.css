@@ -1,0 +1,6 @@
+@import url('../style.css');
+
+#error-message {
+    color: red;
+    display: none;
+}
