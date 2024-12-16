@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{6,})/;
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/; // Changed minimum length to 8
         if (!passwordPattern.test(password)) {
-            errorMessage.textContent = 'Password must be at least 6 characters long, contain at least one uppercase letter, and at least one special symbol.';
+            errorMessage.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter, and at least one special symbol.';
             errorMessage.style.display = 'block';
             return;
         }
 
-        const user = { username: username, password: password };
+        const user = { username: username, password: password, confirmPassword: confirmPassword };
 
         fetch(`${BASE_URL}/Authentication/register`, {
             method: 'POST',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             successMessage.style.display = 'block';
             errorMessage.style.display = 'none';
             setTimeout(() => {
-                window.location.href = '../index.html';
+                window.location.href = '../login-form/login.html';
             }, 2000);
         })
         .catch(error => {
@@ -54,3 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+    } else {
+        input.type = 'password';
+    }
+}

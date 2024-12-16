@@ -25,15 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             const token = data.token;
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            const personId = payload.PersonId;
+            const userId = data.userId;
 
-            if (!personId) {
-                throw new Error('PersonId claim not found in token');
+            if (!userId) {
+                throw new Error('userId not found in response');
             }
 
             localStorage.setItem('token', token);
-            localStorage.setItem('personId', personId);
+            localStorage.setItem('personId', userId);
             localStorage.setItem('username', username); // Store the username
             window.location.href = '../userRegSys/userRegSys.html';
         })
@@ -43,3 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+    } else {
+        input.type = 'password';
+    }
+}

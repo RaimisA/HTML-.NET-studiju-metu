@@ -12,8 +12,13 @@
     <div class="container">
         <h1>Login</h1>
         <form id="login-form">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
             <button type="submit">Login</button>
         </form>
         <div id="error-message">User does not exist or password is incorrect</div>

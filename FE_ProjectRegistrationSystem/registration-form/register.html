@@ -12,9 +12,17 @@
     <div class="container">
         <h1>Register</h1>
         <form id="register-form">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
+            <div class="password-container">
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+            </div>
             <button type="submit">Register</button>
         </form>
         <div id="success-message">Registration successful! Redirecting to login...</div>

@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="userRegSys.css">
 </head>
 <body>
+    <h1>User Registration System</h1>
     <div class="container">
         <div class="header">
-            <img id="profile-picture" src="" alt="Profile Picture" style="max-width: 50px; height: auto;">
-            <h1>User Registration System</h1>
-            <div>
+            <div class="user-info-container">
                 <span id="user-info">Logged in as: User1</span>
                 <button id="logout-button">Logout</button>
+                <img id="profile-picture" src="" alt="Profile Picture">
             </div>
         </div>
         <div id="error-message"></div>
+        <div id="success-message"></div>
         
         <h2 id="add-person-info-header">Add Person Information</h2>
         <form id="add-person-info-form">
@@ -109,6 +110,58 @@
             </div>
             <button type="submit">Update Person Info</button>
         </form>
+
+        <!-- Admin Functions Container -->
+        <div id="admin-functions-container" style="display: none;">
+            <h2>Admin Functions</h2>
+            <div id="admin-success-message" style="color: green;"></div> <!-- New success message element -->
+            <button onclick="getAllUsers()">Get All Users</button>
+            <button onclick="showDeleteUserForm()">Delete User</button>
+            <button onclick="showUpdateUserRoleForm()">Update User Role</button>
+        </div>
+
+        <!-- Get All Users Table -->
+        <div id="all-users-table-container" style="display: none;">
+            <h2>All Users</h2>
+            <table id="all-users-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>User ID</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Delete User Form -->
+        <div id="delete-user-form" style="display: none;">
+            <h2>Delete User</h2>
+            <div class="form-group">
+                <label for="delete-user-id">User ID:</label>
+                <input type="text" id="delete-user-id" placeholder="User ID">
+            </div>
+            <button onclick="deletePersonInfo()">Submit</button> <!-- Updated function name -->
+        </div>
+
+        <!-- Update User Role Form -->
+        <div id="update-user-role-form" style="display: none;">
+            <h2>Update User Role</h2>
+            <div class="form-group">
+                <label for="update-user-id">User ID:</label>
+                <input type="text" id="update-user-id" placeholder="User ID">
+            </div>
+            <div class="form-group">
+                <label for="new-role">New Role:</label>
+                <select id="new-role">
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <button onclick="updateUserRole()">Submit</button>
+        </div>
     </div>
     <script src="userRegSys.js"></script>
 </body>

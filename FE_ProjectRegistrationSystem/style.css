@@ -11,7 +11,7 @@ body {
 
 .container {
     width: 80%;
-    max-width: 600px;
+    max-width: 400px;
     margin: auto;
     overflow: hidden;
     background-color: white;
@@ -79,6 +79,28 @@ form input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.input-container,
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container input,
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
 }
 
 #error-message {

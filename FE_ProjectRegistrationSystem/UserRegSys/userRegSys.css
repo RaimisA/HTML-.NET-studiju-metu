@@ -1,9 +1,41 @@
 @import url('../style.css');
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 #logout-button {
@@ -13,10 +45,15 @@
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 #logout-button:hover {
     background: #c82333;
+}
+
+#profile-picture {
+    display: block;
 }
 
 ul {
@@ -71,6 +108,63 @@ li button:first-child:hover {
 }
 
 #error-message {
-    display: none;
     color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#success-message {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#admin-functions-container {
+    margin-top: 20px;
+}
+
+#admin-functions-container h2 {
+    text-align: center;
+}
+
+#admin-functions-container button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#admin-functions-container button:hover {
+    background: #0056b3;
+}
+
+#all-users-table-container {
+    margin-top: 20px;
+}
+
+#all-users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#all-users-table th, #all-users-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#all-users-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+#all-users-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#all-users-table tr:hover {
+    background-color: #ddd;
 }
