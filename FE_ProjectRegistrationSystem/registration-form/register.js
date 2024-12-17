@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/; // Changed minimum length to 8
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
         if (!passwordPattern.test(password)) {
             errorMessage.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter, and at least one special symbol.';
             errorMessage.style.display = 'block';

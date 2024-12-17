@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = document.getElementById('success-message');
     const profilePicture = document.getElementById('profile-picture');
     const adminFunctionsContainer = document.getElementById('admin-functions-container');
-    const adminSuccessMessage = document.getElementById('admin-success-message'); // New success message element
+    const adminSuccessMessage = document.getElementById('admin-success-message');
     const allUsersTableContainer = document.getElementById('all-users-table-container');
     const deleteUserForm = document.getElementById('delete-user-form');
     const updateUserRoleForm = document.getElementById('update-user-role-form');
@@ -110,15 +110,28 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error adding person information:', error);
-            if (error.message.includes('Personal code already exists')) {
-                errorMessage.textContent = 'Personal code already exists.';
-            } else if (error.message.includes('Email already exists')) {
-                errorMessage.textContent = 'Email already exists.';
-            } else if (error.message.includes('Phone number already exists')) {
-                errorMessage.textContent = 'Phone number already exists.';
-            } else if (error.message.includes('PersonalCode":["Personal code must be 11 digits.')) {
-                errorMessage.textContent = 'Personal code must be 11 digits.';
-            } else {
+            try {
+                const errorObj = JSON.parse(error.message);
+                if (errorObj.errors) {
+                    if (errorObj.errors.PersonalCode) {
+                        errorMessage.textContent = errorObj.errors.PersonalCode.join(', ');
+                    } else if (errorObj.errors.Email) {
+                        errorMessage.textContent = errorObj.errors.Email.join(', ');
+                    } else if (errorObj.errors.PhoneNumber) {
+                        errorMessage.textContent = errorObj.errors.PhoneNumber.join(', ');
+                    } else {
+                        errorMessage.textContent = 'Error adding person information. Please try again.';
+                    }
+                } else if (error.message.includes('Personal code already exists')) {
+                    errorMessage.textContent = 'Personal code already exists.';
+                } else if (error.message.includes('Email already exists')) {
+                    errorMessage.textContent = 'Email already exists.';
+                } else if (error.message.includes('Phone number already exists')) {
+                    errorMessage.textContent = 'Phone number already exists.';
+                } else {
+                    errorMessage.textContent = 'Error adding person information. Please try again.';
+                }
+            } catch (e) {
                 errorMessage.textContent = 'Error adding person information. Please try again.';
             }
             errorMessage.style.display = 'block';
@@ -188,22 +201,24 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    return response.text().then(text => { throw new Error('Network response was not ok: ' + text) });
                 }
-                return response.json();
+                return response.text(); // Changed to response.text() to handle non-JSON response
             })
             .then(data => {
                 errorMessage.style.display = 'none';
                 successMessage.textContent = 'Profile picture updated successfully';
                 successMessage.style.display = 'block';
-                if (data.profilePicture && data.profilePicture.data) {
-                    profilePicture.src = `data:${data.profilePicture.contentType};base64,${data.profilePicture.data}`;
-                }
+                profilePicture.src = URL.createObjectURL(profilePictureInput); // Refresh the image
                 fetchPersonInfo();
             })
             .catch(error => {
                 console.error('Error updating profile picture:', error);
-                errorMessage.textContent = 'Error updating profile picture. Please try again.';
+                if (error.message.includes('The provided image format is not supported')) {
+                    errorMessage.textContent = 'The provided image format is not supported.';
+                } else {
+                    errorMessage.textContent = 'Error updating profile picture. Please try again.';
+                }
                 errorMessage.style.display = 'block';
                 successMessage.style.display = 'none';
             });
@@ -233,13 +248,32 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error updating person information:', error);
-            if (error.message.includes('Personal code already exists')) {
-                errorMessage.textContent = 'Personal code already exists.';
-            } else if (error.message.includes('Email already exists')) {
-                errorMessage.textContent = 'Email already exists.';
-            } else if (error.message.includes('Phone number already exists')) {
-                errorMessage.textContent = 'Phone number already exists.';
-            } else {
+            try {
+                const errorObj = JSON.parse(error.message);
+                if (errorObj.errors) {
+                    if (errorObj.errors.PersonalCode) {
+                        errorMessage.textContent = errorObj.errors.PersonalCode.join(', ');
+                    } else if (errorObj.errors.Email) {
+                        if (errorObj.errors.Email.includes('Invalid top-level domain')) {
+                            errorMessage.textContent = 'Invalid top-level domain.';
+                        } else {
+                            errorMessage.textContent = errorObj.errors.Email.join(', ');
+                        }
+                    } else if (errorObj.errors.PhoneNumber) {
+                        errorMessage.textContent = errorObj.errors.PhoneNumber.join(', ');
+                    } else {
+                        errorMessage.textContent = 'Error updating person information. Please try again.';
+                    }
+                } else if (error.message.includes('Personal code already exists')) {
+                    errorMessage.textContent = 'Personal code already exists.';
+                } else if (error.message.includes('Email already exists')) {
+                    errorMessage.textContent = 'Email already exists.';
+                } else if (error.message.includes('Phone number already exists')) {
+                    errorMessage.textContent = 'Phone number already exists.';
+                } else {
+                    errorMessage.textContent = 'Error updating person information. Please try again.';
+                }
+            } catch (e) {
                 errorMessage.textContent = 'Error updating person information. Please try again.';
             }
             errorMessage.style.display = 'block';
@@ -322,12 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             adminSuccessMessage.textContent = 'User deleted successfully'; // Updated to use adminSuccessMessage
             adminSuccessMessage.style.display = 'block';
-            addPersonInfoForm.style.display = 'block';
-            addPersonInfoHeader.style.display = 'block';
-            updatePersonInfoForm.style.display = 'none';
-            updatePersonInfoHeader.style.display = 'none';
-            allUsersTableContainer.style.display = 'none';
-            deleteUserForm.style.display = 'none';
+            fetchPersonInfo(); // Fetch the updated person info after deletion
         })
         .catch(error => {
             console.error('Error deleting person information:', error);
