@@ -35,12 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => {
             if (!response.ok) {
                 return response.json().then(errorData => {
-                    throw new Error(errorData.error || 'Network response was not ok');
+                    console.error('Error data:', errorData); // Log the error data
+                    if (response.status === 400 && errorData.message === 'User already exists.') {
+                        throw new Error('User already exists');
+                    } else {
+                        throw new Error(errorData.message || 'Network response was not ok');
+                    }
                 });
             }
-            return response.text();
+            return response.json();
         })
-        .then(text => {
+        .then(data => {
+            successMessage.textContent = 'Registration successful. Redirecting to Login';
             successMessage.style.display = 'block';
             errorMessage.style.display = 'none';
             setTimeout(() => {
@@ -48,7 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         })
         .catch(error => {
-            errorMessage.textContent = 'Registration failed. Please try again.';
+            console.error('Error during registration:', error); // Log the error
+            if (error.message === 'User already exists') {
+                errorMessage.textContent = 'User already exists. Please choose a different username.';
+            } else {
+                errorMessage.textContent = 'Registration failed. Please try again.';
+            }
             errorMessage.style.display = 'block';
             successMessage.style.display = 'none';
         });

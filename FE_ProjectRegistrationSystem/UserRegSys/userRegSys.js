@@ -110,28 +110,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error adding person information:', error);
-            try {
-                const errorObj = JSON.parse(error.message);
-                if (errorObj.errors) {
-                    if (errorObj.errors.PersonalCode) {
-                        errorMessage.textContent = errorObj.errors.PersonalCode.join(', ');
-                    } else if (errorObj.errors.Email) {
-                        errorMessage.textContent = errorObj.errors.Email.join(', ');
-                    } else if (errorObj.errors.PhoneNumber) {
-                        errorMessage.textContent = errorObj.errors.PhoneNumber.join(', ');
-                    } else {
-                        errorMessage.textContent = 'Error adding person information. Please try again.';
-                    }
-                } else if (error.message.includes('Personal code already exists')) {
-                    errorMessage.textContent = 'Personal code already exists.';
-                } else if (error.message.includes('Email already exists')) {
-                    errorMessage.textContent = 'Email already exists.';
-                } else if (error.message.includes('Phone number already exists')) {
-                    errorMessage.textContent = 'Phone number already exists.';
-                } else {
-                    errorMessage.textContent = 'Error adding person information. Please try again.';
-                }
-            } catch (e) {
+            if (error.message.includes('Personal code already exists')) {
+                errorMessage.textContent = 'Personal code already exists.';
+            } else if (error.message.includes('Email already exists')) {
+                errorMessage.textContent = 'Email already exists.';
+            } else if (error.message.includes('Phone number already exists')) {
+                errorMessage.textContent = 'Phone number already exists.';
+            } else {
                 errorMessage.textContent = 'Error adding person information. Please try again.';
             }
             errorMessage.style.display = 'block';
